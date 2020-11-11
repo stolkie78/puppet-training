@@ -1,0 +1,22 @@
+---
+profile::base::hosts::list:
+  racmaster.example.com:
+    ip: 192.168.5.10
+    host_aliases:
+      - racmaster
+      - master
+      - puppet
+  em1215.example.com:
+    ip: 192.168.253.120
+    host_aliases:
+      - em1215
+  em1310.example.com:
+    ip: 192.168.253.131
+    host_aliases:
+      - em1310
+  em1320.example.com:
+    ip: 192.168.253.132
+    host_aliases:
+      - em1320
+
+ora_profile::database::source: /vagrant/modules/software/files

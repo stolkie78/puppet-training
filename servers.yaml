@@ -1,0 +1,47 @@
+---
+#
+# The default settings for all nodes
+#
+defaults:
+  domain_name:      example.com
+  dhcp_fix:         false
+  cpucount:         3
+
+  virtualboxorafix: true
+  needs_storage:    true
+  box:              enterprisemodules/ol-7.7-x86_64-nocm
+  virtualboxorafix: true
+  required_plugins: []
+  custom_facts:
+    deployment_zone: vagrant
+
+#
+# The default settings for all PE nodes
+#
+pe-defaults:
+  type:             pe-agent
+  puppet_master:    master
+
+#
+# The settings for the Puppet Enterprise Server
+#
+pe-master:
+  public_ip:        192.168.5.10
+  cpucount:         2
+  ram:              3072
+  type:             pe-master
+  virtualboxorafix: false
+  needs_storage:    false
+  puppet_installer: puppet-enterprise-2019.8.1-el-7-x86_64/puppet-enterprise-installer
+pe-agent:
+  public_ip:        192.168.5.20
+  type:             pe-agent
+  virtualboxorafix: false
+  needs_storage:    false
+pe-agent1:
+  public_ip:        192.168.5.30
+  type:             pe-agent
+  virtualboxorafix: false
+  needs_storage:    false
+  box:              ubuntu/groovy64
+
